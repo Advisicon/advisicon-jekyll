@@ -1,0 +1,4 @@
+# Ignore RVM files
+
+.ruby-version
+.ruby-gemset
