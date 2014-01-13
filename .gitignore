@@ -2,3 +2,12 @@
 
 .ruby-version
 .ruby-gemset
+
+# Ignore jekyll generated pages
+_site
+
+# Ignore swap files
+*~
+
+# Ignore mac temp files
+.DS_Store
