@@ -20,6 +20,11 @@ describe "Static pages" do
       visit '/static_pages/home'
       expect(page).not_to have_title("| #{base_title}")
     end
+
+    it "should have keywords" do
+      visit '/static_pages/home'
+      expect(page).to have_css 'meta[name="keywords"]', :visible => false
+    end
   end
 
   describe "Careers page" do
@@ -32,6 +37,11 @@ describe "Static pages" do
     it "should have the right title" do
       visit '/static_pages/careers'
       expect(page).to have_title("Careers | #{base_title}")
+    end
+
+    it "should have keywords" do
+      visit '/static_pages/careers'
+      expect(page).to have_css 'meta[name="keywords"]', :visible => false
     end
   end
 
@@ -46,6 +56,11 @@ describe "Static pages" do
       visit '/static_pages/about'
       expect(page).to have_title("About Us | #{base_title}")
     end
+
+    it "should have keywords" do
+      visit '/static_pages/about'
+      expect(page).to have_css 'meta[name="keywords"]', :visible => false
+    end
   end
 
   describe "Contact page" do
@@ -58,6 +73,11 @@ describe "Static pages" do
     it "should have the right title" do
       visit '/static_pages/contact'
       expect(page).to have_title("Contact | #{base_title}")
+    end
+
+    it "should have keywords" do
+      visit '/static_pages/contact'
+      expect(page).to have_css 'meta[name="keywords"]', :visible => false
     end
   end
 end
