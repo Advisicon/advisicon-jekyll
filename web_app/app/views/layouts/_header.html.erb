@@ -1,17 +1,16 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Advisicon", '#', id: "logo" %>
+      <%= link_to "Advisicon", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home",    '#' %></li>
+          <li><%= link_to "Home",    root_path %></li>
           <li class="dropdown">
-            <a href='#' class="dropdown-toggle" data-toggle="dropdown">
-              About <b class="caret"></b>
-            </a> 
-            <ul class="dropdown-menu">
-              <li><%= link_to "Contact",        '#' %></li>
-              <li><%= link_to "Careers",        '#' %></li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+            <ul id="about-dropdown" class="dropdown-menu">
+              <li><%= link_to "About Us",       about_path   %></li>
+              <li><%= link_to "Contact",        contact_path %></li>
+              <li><%= link_to "Careers",        careers_path %></li>
               <li class="divider"></li>
               <li><%= link_to "Case Studies",   '#' %></li>
               <li><%= link_to "Clients",        '#' %></li>
@@ -20,13 +19,11 @@
               <li><%= link_to "Certifications", '#' %></li>
             </ul>
           </li>
-          <li><%= link_to "Blog",    '#' %></li>
-          <li><%= link_to "Store",   '#' %></li>
+          <li><%= link_to "Blog",    'http://blog.advisicon.com/' %></li>
+          <li><%= link_to "Store",   'http://store.advisicon.com/' %></li>
           <li class="dropdown">
-            <a href='#' class="dropdown-toggle" data-toggle="dropdown">
-              Capabilities <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Capabilities <b class="caret"></b></a>
+            <ul id="capabilities-dropdown" class="dropdown-menu">
               <li><%= link_to "Application Development",  '#' %></li>
               <li><%= link_to "Training",                 '#' %></li>
               <li><%= link_to "SharePoint",               '#' %></li>

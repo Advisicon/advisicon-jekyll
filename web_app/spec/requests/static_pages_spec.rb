@@ -3,81 +3,42 @@ require 'spec_helper'
 describe "Static pages" do
 
   let(:base_title) { "Advisicon" }
+  subject { page }
 
   describe "Home page" do
+    before { visit root_path }
 
-    it "should have the content 'Advisicon'" do
-      visit '/static_pages/home'
-      expect(page).to have_content('Advisicon')
-    end
-
-    it "should have the base title" do
-      visit '/static_pages/home'
-      expect(page).to have_title("#{base_title}")
-    end
-
-    it "should not have a custom title" do
-      visit '/static_pages/home'
-      expect(page).not_to have_title("| #{base_title}")
-    end
-
-    it "should have keywords" do
-      visit '/static_pages/home'
-      expect(page).to have_css 'meta[name="keywords"]', :visible => false
-    end
+    it { should have_content('Advisicon') }
+    it { should have_title("#{base_title}") }
+    it { should_not have_title("| #{base_title}") } 
+    it { should have_css 'meta[name="keywords"]', :visible => false }
+    it { should have_selector('#carousel-slideshow') }
   end
 
   describe "Careers page" do
+    before { visit careers_path }
 
-    it "should have the content 'Careers'" do
-      visit '/static_pages/careers'
-      expect(page).to have_content('Careers')
-    end
-
-    it "should have the right title" do
-      visit '/static_pages/careers'
-      expect(page).to have_title("Careers | #{base_title}")
-    end
-
-    it "should have keywords" do
-      visit '/static_pages/careers'
-      expect(page).to have_css 'meta[name="keywords"]', :visible => false
-    end
+    it { should have_content('Careers') }
+    it { should have_title("Careers | #{base_title}") }
+    it { should have_css 'meta[name="keywords"]', :visible => false }
+    it { should_not have_selector('#carousel-slideshow') }
   end
 
   describe "About page" do
+    before { visit about_path }
 
-    it "should have the content 'About Us'" do
-      visit '/static_pages/about'
-      expect(page).to have_content('About Us')
-    end
-
-    it "should have the right title" do
-      visit '/static_pages/about'
-      expect(page).to have_title("About Us | #{base_title}")
-    end
-
-    it "should have keywords" do
-      visit '/static_pages/about'
-      expect(page).to have_css 'meta[name="keywords"]', :visible => false
-    end
+    it { should have_content('About Us') }
+    it { should have_title("About Us | #{base_title}") }
+    it { should have_css 'meta[name="keywords"]', :visible => false }
+    it { should_not have_selector('#carousel-slideshow') }
   end
 
   describe "Contact page" do
+    before { visit contact_path }
 
-    it "should have the content 'Contact'" do
-      visit '/static_pages/contact'
-      expect(page).to have_content('Contact')
-    end
-
-    it "should have the right title" do
-      visit '/static_pages/contact'
-      expect(page).to have_title("Contact | #{base_title}")
-    end
-
-    it "should have keywords" do
-      visit '/static_pages/contact'
-      expect(page).to have_css 'meta[name="keywords"]', :visible => false
-    end
+    it { should have_content('Contact') }
+    it { should have_title("Contact | #{base_title}") }
+    it { should have_css 'meta[name="keywords"]', :visible => false }
+    it { should_not have_selector('#carousel-slideshow') }
   end
 end

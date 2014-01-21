@@ -3,6 +3,8 @@
 /* variables */
 $font-stack: Futura, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $red: #860c0c;
+$lightGray: #999;
+$grayMediumLight: #eaeaea;
 
 /* universal */
 
@@ -35,6 +37,7 @@ html,body{height:100%;}
 .container,.carousel,.item,.active{height:100%;}
 .carousel-inner{height:100%;}
 .fill{width:100%;height:100%;background-position:center;background-size:cover;opacity:.9;}
+
 /* typography */
 .fill small {opacity:.75;}
 
@@ -85,11 +88,10 @@ header { font-family: $font-stack; }
   padding-left: 3em;
   margin-left: -3em;
   background: url("logo-white.png") no-repeat 10% 90%;
-}
-
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .navbar .nav > li {
@@ -102,28 +104,23 @@ header { font-family: $font-stack; }
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #999;
-}
-
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
+  border-top: 1px solid $grayMediumLight;
+  color: $lightGray;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
 }
