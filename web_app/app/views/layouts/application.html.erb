@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <%= render 'layouts/shim' %>
 <head>
-  <meta charset='utf-8' >
-  <%= render 'layouts/google-verify' %>
-  <meta http-equiv='X-UA-Compatible'    content='IE=edge,chrome=1' >
-  <meta name='keywords'                 content='<%= yield(:keywords) %>' >
-  <meta itemprop='name'                 content='<%= yield(:title) %>' >
-  <meta name='description'              itemprop='decription'
-                                        content='<%= yield(:description) %>' >
-
   <title><%= full_title(yield(:title)) %></title>
 
   <meta name='viewport'                 content='width=device-width, initial-scale=1.0' >
@@ -17,94 +8,19 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
-  <%= javascript_include_tag "modernizr-2.5.3.min.js" %>
-  <%= javascript_include_tag "css3-mediaqueries.js" %>
+  <%= render 'layouts/shim' %>
 
 </head>
 <body>
-  <%= render 'layouts/chromeframe' %>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-inner">
-      <div class="container">
-        <%= link_to "Advisicon", '#', id: "logo" %>
-        <nav>
-          <ul class="nav pull-right">
-            <li><%= link_to "Home",    '#' %></li>
-            <li><%= link_to "About",   '#' %></li>
-            <li><%= link_to "Contact", '#' %></li>
-            <li><%= link_to "Blog",    '#' %></li>
-            <li><%= link_to "Store",   '#' %></li>
-            <li><%= link_to "Careers", '#' %></li>
-            <li><%= link_to "Sign in", '#' %></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
-  <!-- <%= image_tag 'banner.jpg', id: 'advisiconBanner',
-                              border: '0',
-                              alt: 'Advisicon, Inc.',
-                              width: '950',
-                              height: '110',
-                              usemap: '#Map' %>
-      <div class='navbar'>
-        <%= render 'layouts/accordian-ads' %>
-      </div> --><!-- END navbar -->
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/carousel' %>
+  <div class="container">
 
-      <!--
-      <div id='navAndCred'>
-        <%= render 'layouts/secondary-nav' %>
-        <%= render 'layouts/credentials' %>
-      </div>
-
-      <!--
-      <aside id='secondaryContent'>
-
-        <%= render 'layouts/social-media-profiles' %>
-        <%= render 'layouts/project-online-advert' %>
-
-        <div class='rPopBox'>
-          <h3>Recent Blog Posts</h3>
-          <ul id='feedContent'>
-            <li>
-              Visit the <a href='http://blog.advisicon.com/' 
-                           title='view the Advisicon blog'>Advisicon Blog</a> 
-              to see our most recent blog posts.
-            </li>
-          </ul>--><!-- END feedContent' --><!--
-        </div>
-
-        <%= render 'layouts/featured-tools' %> 
-        <%= render 'layouts/news-ticker' %>
-        <%= render 'layouts/course-ticker' %>
-        <%= render 'layouts/featured-books' %>
-
-      </aside>--><!-- END secondaryContent --><!--
-      <section id='main' itemscope itemtype='http://schema.org/LocalBusiness'>
-        -->
-
-        <div class='container'>
-        <%= yield %>
+    <%= yield %>
        
-        <!--</section>--><!-- END main -->
-      <!--</div>--><!-- END content -->
-        <footer>
+    <%= render 'layouts/footer' %>
 
-          <%= render 'layouts/footer' %>
-
-        </footer>
-      </div>
-        <!--
-    <map id='Map' name='Map'>
-      <area shape='rect' coords='858,21,936,99' href='/' alt='Advisicon Home' />
-      <area shape='rect' coords='860,22,861,24' href='#' alt='Advisicon' />
-    </map>
-    -->
-
-    <%= render 'layouts/bottom-scripts' %>
-    <!-- add google feed load here -->
-    <!-- add public courses load here -->
-    <!--</div>--><!-- END main>
+  </div>
 
 </body>
 </html>
