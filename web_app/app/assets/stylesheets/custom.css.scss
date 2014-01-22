@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
   
 }
 
@@ -123,4 +123,12 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+/* employee list */
+.employee-list { 
+  list-style: none;
+  padding-left: inherit;
+  img {  }
+  .name { display:block; font-weight:bold; }
 }
